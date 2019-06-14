@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<!-- <bean id="traingle" class="com.sheetal.javabrains.Triangle">
+		<property name="type" value="Equilateral"/>
+		<constructor-arg type="java.lang.String"  value="equilateral"/>
+		<constructor-arg  type="int" value="20"/>
+	</bean> -->
+	
+	<bean id="traingle" class="com.sheetal.javabrains.Triangle">
+		<property name="points" >
+		<list>
+			<ref bean="pointA" />
+			<ref bean="pointB" />
+		</list> 
+		</property>
+		
+	</bean>
+	
+	<bean id="pointA" class ="com.sheetal.javabrains.Point">
+		<property name="x" value="${pointA.pointx}"/>
+		<property name="y" value="${pointA.pointy}"/>
+	</bean>
+	<bean id="pointB" class ="com.sheetal.javabrains.Point">
+		<property name="x" value="-20"/>
+		<property name="y" value="0"/>
+	</bean>
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations" value="pointsconfig.properties"/>
+	</bean>
+	
+</beans>
