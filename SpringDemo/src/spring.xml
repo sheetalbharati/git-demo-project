@@ -6,6 +6,7 @@
 		<constructor-arg type="java.lang.String"  value="equilateral"/>
 		<constructor-arg  type="int" value="20"/>
 	</bean> -->
+<!-- new line added -->
 	
 	<bean id="traingle" class="com.sheetal.javabrains.Triangle">
 		<property name="points" >
